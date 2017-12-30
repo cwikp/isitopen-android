@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="1 stycznia 2018"
-        android:id="@+id/textView"
+        android:id="@+id/dateText"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -26,8 +26,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Poniedziałek"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/textView"
+        android:id="@+id/weekdayText"
+        android:layout_below="@+id/dateText"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -35,9 +35,9 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Dzisiaj sklepy są"
-        android:id="@+id/textView3"
+        android:id="@+id/openInfoText"
         android:layout_marginTop="31dp"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/weekdayText"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -47,19 +47,19 @@
         android:text="ZAMKNIĘTE"
         android:textSize="50sp"
         android:textStyle="bold"
-        android:id="@+id/textView4"
+        android:id="@+id/mainInfoText"
         android:layout_marginTop="10dp"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/openInfoText"
         android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:id="@+id/imageView"
+        android:id="@+id/faceImage"
         android:src="@drawable/sadface"
         android:scaleType="fitXY"
         android:layout_marginTop="10dp"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/mainInfoText"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -67,8 +67,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Mapa otwartych sklepów"
-        android:id="@+id/textView5"
-        android:layout_below="@+id/imageView"
+        android:id="@+id/mapText"
+        android:layout_below="@+id/faceImage"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="44dp" />
 
@@ -77,7 +77,7 @@
         android:layout_height="wrap_content"
         android:text="Klik!"
         android:background="@color/black_overlay"
-        android:id="@+id/button"
+        android:id="@+id/mapButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="24dp" />
@@ -85,28 +85,32 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
+        android:id="@+id/mapInfo"
         android:src="@android:drawable/ic_menu_info_details"
-        android:layout_alignBottom="@+id/textView5"
-        android:layout_toRightOf="@+id/textView5"
-        android:layout_toEndOf="@+id/textView5" />
+        android:layout_alignBottom="@+id/mapText"
+        android:layout_toRightOf="@+id/mapText"
+        android:layout_toEndOf="@+id/mapText" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView3"
+        android:id="@+id/datePlusButton"
         android:src="@android:drawable/ic_menu_add"
-        android:layout_alignTop="@+id/textView"
-        android:layout_toRightOf="@+id/textView3"
-        android:layout_toEndOf="@+id/textView3" />
+        android:clickable="true"
+        android:onClick="onDatePlusClick"
+        android:layout_alignTop="@+id/dateText"
+        android:layout_toRightOf="@+id/openInfoText"
+        android:layout_toEndOf="@+id/openInfoText" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView4"
+        android:id="@+id/dateMinusButton"
         android:src="@android:drawable/ic_menu_add"
-        android:layout_alignTop="@+id/textView"
-        android:layout_toLeftOf="@+id/textView3"
-        android:layout_toStartOf="@+id/textView3" />
+        android:clickable="true"
+        android:onClick="onDateMinusClick"
+        android:layout_alignTop="@+id/dateText"
+        android:layout_toLeftOf="@+id/openInfoText"
+        android:layout_toStartOf="@+id/openInfoText" />
 
 </RelativeLayout>
