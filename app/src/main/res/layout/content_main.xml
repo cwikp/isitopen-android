@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:id="@+id/container"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.isitopen.MainActivity"
     tools:showIn="@layout/activity_main">
@@ -15,9 +16,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="1 stycznia 2018"
         android:id="@+id/dateText"
+        android:onClick="showDatePickerDialog"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -26,6 +28,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Poniedziałek"
+        android:onClick="showDatePickerDialog"
         android:id="@+id/weekdayText"
         android:layout_below="@+id/dateText"
         android:layout_centerHorizontal="true" />
@@ -78,14 +81,14 @@
         android:text="Klik!"
         android:background="@color/black_overlay"
         android:id="@+id/mapButton"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="24dp" />
+        android:layout_below="@+id/mapText"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/mapInfo"
+        android:onClick="onMapInfoClicked"
         android:src="@android:drawable/ic_menu_info_details"
         android:layout_alignBottom="@+id/mapText"
         android:layout_toRightOf="@+id/mapText"
@@ -98,9 +101,9 @@
         android:src="@android:drawable/ic_menu_add"
         android:clickable="true"
         android:onClick="onDatePlusClick"
-        android:layout_alignTop="@+id/dateText"
-        android:layout_toRightOf="@+id/openInfoText"
-        android:layout_toEndOf="@+id/openInfoText" />
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/mapText"
+        android:layout_alignEnd="@+id/mapText" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -109,8 +112,8 @@
         android:src="@android:drawable/ic_menu_add"
         android:clickable="true"
         android:onClick="onDateMinusClick"
-        android:layout_alignTop="@+id/dateText"
-        android:layout_toLeftOf="@+id/openInfoText"
-        android:layout_toStartOf="@+id/openInfoText" />
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/mapText"
+        android:layout_alignStart="@+id/mapText" />
 
 </RelativeLayout>

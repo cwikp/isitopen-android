@@ -12,6 +12,8 @@ public class ClosedDays {
     static {
         closedDays.put(new ClosedDay(1, 1, 2018), HOLIDAY);
         closedDays.put(new ClosedDay(1, 7, 2018), FREE_SUNDAY);
+        closedDays.put(new ClosedDay(4, 3, 2018), FREE_SUNDAY);
+        closedDays.put(new ClosedDay(7, 3, 2018), HOLIDAY);
     }
 
     public static HashMap<ClosedDay, ClosedReason> getClosedDays(){
@@ -33,7 +35,7 @@ class ClosedDay{
     public static ClosedDay of(Calendar calendar) {
         return new ClosedDay(
                 calendar.get(Calendar.DAY_OF_MONTH),
-                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.MONTH) + 1,
                 calendar.get(Calendar.YEAR)
         );
     }

@@ -7,4 +7,9 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="open">OTWARTE</string>
     <string name="closed">ZAMKNIĘTE</string>
+    <string name="mapInfoText">Niektóre sklepy nie są objęte zakazem handlu w niedzielę. Zobacz je na mapie!</string>
+    <string name="infoToday">Dzisiaj sklepy są</string>
+    <string name="infoTomorrow">Jutro sklepy będą</string>
+    <string name="infoPast">Sklepy były</string>
+    <string name="infoFuture">Sklepy będą</string>
 </resources>
